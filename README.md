@@ -2,6 +2,31 @@
 
 Aplicación web Contactinet.
 
+<!-- BEGIN project-context -->
+
+## Antigüedad y evidencia
+
+**Año de referencia de esta versión: 2019.** Se toma el archivo de código o configuración más reciente con una fecha histórica recuperable; no se ha podido confirmar la fecha exacta de creación.
+
+- Archivo más reciente datable: **2019-11-14**, [`MyNetwork/azure-pipelines.yml`](MyNetwork/azure-pipelines.yml); fecha de modificación conservada.
+- Primer registro del repositorio Git original que contiene este código: **2019-11-13**. Puede corresponder a una importación; no prueba cuándo se escribió por primera vez.
+- Dependencia fechada más reciente entre las comprobadas: [Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore 3.0.0](https://www.nuget.org/packages/Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore/3.0.0), publicada el **2019-09-23** (versión declarada), en [`MyNetwork/Contactinet.Web/Contactinet.Web/Contactinet.Web.csproj`](MyNetwork/Contactinet.Web/Contactinet.Web/Contactinet.Web.csproj).
+- Referencia adicional: destino `netcoreapp3.0` en [`MyNetwork/Contactinet.Web/Contactinet.Web/Contactinet.Web.csproj`](MyNetwork/Contactinet.Web/Contactinet.Web/Contactinet.Web.csproj); su [versión estable se publicó el 2019-09-23](https://dotnet.microsoft.com/en-us/platform/support/policy/dotnet-core). Es una pista de generación tecnológica; pudieron existir versiones preliminares anteriores.
+
+La publicación de una dependencia sitúa la configuración conservada a partir de esa versión, si la referencia es válida. Una actualización de paquetes puede ser mucho más reciente que el inicio del proyecto. No se restauraron paquetes para comprobarlo.
+
+## Por qué merece la pena mirarlo
+
+La parte visible es una base Razor Pages con Identity y migraciones de Entity Framework. Tiene interés como referencia de autenticación y persistencia de un prototipo; el código conservado todavía no desarrolla una red de contactos completa.
+
+Puntos de entrada al código:
+
+- [`Contactinet.Web/Contactinet.Web/Startup.cs`](MyNetwork/Contactinet.Web/Contactinet.Web/Startup.cs)
+- [`Contactinet.Web/Contactinet.Web/Data`](MyNetwork/Contactinet.Web/Contactinet.Web/Data/)
+- [`Contactinet.Web/Contactinet.Web/Pages`](MyNetwork/Contactinet.Web/Contactinet.Web/Pages/)
+
+<!-- END project-context -->
+
 ## Contenido
 
 | Directorio | Función |
