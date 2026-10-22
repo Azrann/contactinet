@@ -1,25 +1,27 @@
+**Languages:** [English](README.md) · [Español](README.es.md)
+
 # contactinet
 
-Aplicación web Contactinet.
+Contactinet web application.
 
 <!-- BEGIN project-context -->
 
-## Antigüedad y evidencia
+## Historical dates and evidence
 
-**Año de referencia de esta versión: 2019.** Se toma el archivo de código o configuración más reciente con una fecha histórica recuperable; no se ha podido confirmar la fecha exacta de creación.
+**Reference year for this version: 2019.** This uses the most recent source or configuration file with a recoverable historical date; the exact creation date could not be confirmed.
 
-- Archivo más reciente datable: **2019-11-14**, [`MyNetwork/azure-pipelines.yml`](MyNetwork/azure-pipelines.yml); fecha de modificación conservada.
-- Primer registro del repositorio Git original que contiene este código: **2019-11-13**. Puede corresponder a una importación; no prueba cuándo se escribió por primera vez.
-- Dependencia fechada más reciente entre las comprobadas: [Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore 3.0.0](https://www.nuget.org/packages/Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore/3.0.0), publicada el **2019-09-23** (versión declarada), en [`MyNetwork/Contactinet.Web/Contactinet.Web/Contactinet.Web.csproj`](MyNetwork/Contactinet.Web/Contactinet.Web/Contactinet.Web.csproj).
-- Referencia adicional: destino `netcoreapp3.0` en [`MyNetwork/Contactinet.Web/Contactinet.Web/Contactinet.Web.csproj`](MyNetwork/Contactinet.Web/Contactinet.Web/Contactinet.Web.csproj); su [versión estable se publicó el 2019-09-23](https://dotnet.microsoft.com/en-us/platform/support/policy/dotnet-core). Es una pista de generación tecnológica; pudieron existir versiones preliminares anteriores.
+- Most recent datable file: **2019-11-14**, [`MyNetwork/azure-pipelines.yml`](MyNetwork/azure-pipelines.yml); preserved modification timestamp.
+- First record in the original Git repository containing this code: **2019-11-13**. This may be an import and does not establish when the code was first written.
+- Most recently published dependency among those checked: [Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore 3.0.0](https://www.nuget.org/packages/Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore/3.0.0), published on **2019-09-23** (declared version), in [`MyNetwork/Contactinet.Web/Contactinet.Web/Contactinet.Web.csproj`](MyNetwork/Contactinet.Web/Contactinet.Web/Contactinet.Web.csproj).
+- Additional reference: target `netcoreapp3.0` in [`MyNetwork/Contactinet.Web/Contactinet.Web/Contactinet.Web.csproj`](MyNetwork/Contactinet.Web/Contactinet.Web/Contactinet.Web.csproj); its [stable release was published on 2019-09-23](https://dotnet.microsoft.com/en-us/platform/support/policy/dotnet-core). This indicates the technology generation; earlier preview releases may have existed.
 
-La publicación de una dependencia sitúa la configuración conservada a partir de esa versión, si la referencia es válida. Una actualización de paquetes puede ser mucho más reciente que el inicio del proyecto. No se restauraron paquetes para comprobarlo.
+A dependency's publication places the preserved configuration at or after that version, if the reference is valid. Package updates may be much newer than the project's beginnings. Packages were not restored to verify this.
 
-## Por qué merece la pena mirarlo
+## Why this is worth exploring
 
-La parte visible es una base Razor Pages con Identity y migraciones de Entity Framework. Tiene interés como referencia de autenticación y persistencia de un prototipo; el código conservado todavía no desarrolla una red de contactos completa.
+The visible portion is a Razor Pages foundation with Identity and Entity Framework migrations. It is a useful authentication and persistence reference for a prototype; the preserved code does not yet implement a complete contact network.
 
-Puntos de entrada al código:
+Code entry points:
 
 - [`Contactinet.Web/Contactinet.Web/Startup.cs`](MyNetwork/Contactinet.Web/Contactinet.Web/Startup.cs)
 - [`Contactinet.Web/Contactinet.Web/Data`](MyNetwork/Contactinet.Web/Contactinet.Web/Data/)
@@ -27,34 +29,34 @@ Puntos de entrada al código:
 
 <!-- END project-context -->
 
-## Contenido
+## Contents
 
-| Directorio | Función |
+| Directory | Function |
 | --- | --- |
-| [`MyNetwork/`](MyNetwork/) | Prototipo Contactinet.Web basado en ASP.NET Core Razor Pages con cuentas de usuario ASP.NET Identity, persistencia SQL y configuración de despliegue Azure. |
+| [`MyNetwork/`](MyNetwork/) | Contactinet.Web prototype based on ASP.NET Core Razor Pages with ASP.NET Identity user accounts, SQL persistence, and Azure deployment configuration. |
 
 
 
-## Requisitos y preparación
+## Requirements and setup
 
-.NET Core 3.0, ASP.NET Core MVC, Identity y Entity Framework.
+.NET Core 3.0, ASP.NET Core MVC, Identity, and Entity Framework.
 
-Esta es una copia histórica. Consultar los archivos de proyecto y los README de cada componente para sus versiones y dependencias. Restaurar NuGet/npm desde la carpeta correspondiente; las bibliotecas internas pueden necesitar reconstrucción. Preparar las bases de datos y los servicios externos con cuentas propias.
+This is a historical copy. Consult each component's project files and README for versions and dependencies. Restore NuGet/npm from the appropriate folder; internal libraries may need rebuilding. Prepare databases and external services using your own accounts.
 
-Soluciones conservadas:
+Preserved solutions:
 
 - `MyNetwork/Contactinet.Web/Contactinet.Web.sln`
 
-## Configuración y seguridad
+## Configuration and security
 
-Los secretos originales se han eliminado o sustituido por `REPLACE_WITH_YOUR_VALUE`. Buscar este marcador antes de ejecutar y aportar los valores mediante configuración local o variables de entorno. Las sesiones, claves privadas, certificados de firma, bases de datos, registros, perfiles de despliegue y paquetes binarios no se publican. El `.gitignore` protege estos archivos locales.
+Original secrets have been removed or replaced with `REPLACE_WITH_YOUR_VALUE`. Search for this marker before running and provide values through local configuration or environment variables. Sessions, private keys, signing certificates, databases, logs, deployment profiles, and binary packages are not published. The `.gitignore` protects these local files.
 
-Se publica un historial nuevo: los commits antiguos permanecen únicamente en la copia local original. Los valores de ejemplo no permiten conectarse a los servicios originales.
+A fresh history is published: old commits remain only in the original local copy. Example values cannot connect to the original services.
 
-## Estado de validación
+## Validation status
 
-Se realizó una revisión estática y un escaneo de secretos antes de publicar. No se ejecutaron aplicaciones, operaciones de trading, despliegues ni pruebas que contacten servicios externos. No se garantiza la compilación con herramientas actuales. Algunos proyectos necesitan dependencias históricas y activos que no están incluidos.
+A static review and secret scan were performed before publication. Applications, trading operations, deployments, and tests contacting external services were not run. Building with current tools is not guaranteed. Some projects need historical dependencies and assets that are not included.
 
-## Licencias y procedencia
+## Licenses and provenance
 
-Se conservan las licencias y atribuciones de terceros presentes en el código. No se añade una licencia global a los componentes que no la tenían. Esta importación conserva fuentes locales y no afirma ser una versión actual del proyecto original.
+Third-party licenses and attributions present in the code are retained. No blanket license is added to components that lacked one. This import preserves local sources and does not claim to be a current version of the original project.

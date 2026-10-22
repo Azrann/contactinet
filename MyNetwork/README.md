@@ -1,27 +1,29 @@
+**Languages:** [English](README.md) · [Español](README.es.md)
+
 # MyNetwork
 
-Prototipo Contactinet.Web basado en ASP.NET Core Razor Pages con cuentas de usuario ASP.NET Identity, persistencia SQL y configuración de despliegue Azure.
+Contactinet.Web prototype based on ASP.NET Core Razor Pages with ASP.NET Identity user accounts, SQL persistence, and Azure deployment configuration.
 
-Documentación basada en los archivos locales revisados el 21 de octubre de 2026.
+Documentation based on local files reviewed on 21 October 2026.
 
 <!-- BEGIN project-context -->
 
-## Antigüedad y evidencia
+## Historical dates and evidence
 
-**Año de referencia de esta versión: 2019.** Se toma el archivo de código o configuración más reciente con una fecha histórica recuperable; no se ha podido confirmar la fecha exacta de creación.
+**Reference year for this version: 2019.** This uses the most recent source or configuration file with a recoverable historical date; the exact creation date could not be confirmed.
 
-- Archivo más reciente datable: **2019-11-14**, [`MyNetwork/azure-pipelines.yml`](azure-pipelines.yml); fecha de modificación conservada.
-- Primer registro del repositorio Git original que contiene este código: **2019-11-13**. Puede corresponder a una importación; no prueba cuándo se escribió por primera vez.
-- Dependencia fechada más reciente entre las comprobadas: [Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore 3.0.0](https://www.nuget.org/packages/Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore/3.0.0), publicada el **2019-09-23** (versión declarada), en [`MyNetwork/Contactinet.Web/Contactinet.Web/Contactinet.Web.csproj`](Contactinet.Web/Contactinet.Web/Contactinet.Web.csproj).
-- Referencia adicional: destino `netcoreapp3.0` en [`MyNetwork/Contactinet.Web/Contactinet.Web/Contactinet.Web.csproj`](Contactinet.Web/Contactinet.Web/Contactinet.Web.csproj); su [versión estable se publicó el 2019-09-23](https://dotnet.microsoft.com/en-us/platform/support/policy/dotnet-core). Es una pista de generación tecnológica; pudieron existir versiones preliminares anteriores.
+- Most recent datable file: **2019-11-14**, [`MyNetwork/azure-pipelines.yml`](azure-pipelines.yml); preserved modification timestamp.
+- First record in the original Git repository containing this code: **2019-11-13**. This may be an import and does not establish when the code was first written.
+- Most recently published dependency among those checked: [Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore 3.0.0](https://www.nuget.org/packages/Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore/3.0.0), published on **2019-09-23** (declared version), in [`MyNetwork/Contactinet.Web/Contactinet.Web/Contactinet.Web.csproj`](Contactinet.Web/Contactinet.Web/Contactinet.Web.csproj).
+- Additional reference: target `netcoreapp3.0` in [`MyNetwork/Contactinet.Web/Contactinet.Web/Contactinet.Web.csproj`](Contactinet.Web/Contactinet.Web/Contactinet.Web.csproj); its [stable release was published on 2019-09-23](https://dotnet.microsoft.com/en-us/platform/support/policy/dotnet-core). This indicates the technology generation; earlier preview releases may have existed.
 
-La publicación de una dependencia sitúa la configuración conservada a partir de esa versión, si la referencia es válida. Una actualización de paquetes puede ser mucho más reciente que el inicio del proyecto. No se restauraron paquetes para comprobarlo.
+A dependency's publication places the preserved configuration at or after that version, if the reference is valid. Package updates may be much newer than the project's beginnings. Packages were not restored to verify this.
 
-## Por qué merece la pena mirarlo
+## Why this is worth exploring
 
-La parte visible es una base Razor Pages con Identity y migraciones de Entity Framework. Tiene interés como referencia de autenticación y persistencia de un prototipo; el código conservado todavía no desarrolla una red de contactos completa.
+The visible portion is a Razor Pages foundation with Identity and Entity Framework migrations. It is a useful authentication and persistence reference for a prototype; the preserved code does not yet implement a complete contact network.
 
-Puntos de entrada al código:
+Code entry points:
 
 - [`Contactinet.Web/Contactinet.Web/Startup.cs`](Contactinet.Web/Contactinet.Web/Startup.cs)
 - [`Contactinet.Web/Contactinet.Web/Data`](Contactinet.Web/Contactinet.Web/Data/)
@@ -29,46 +31,46 @@ Puntos de entrada al código:
 
 <!-- END project-context -->
 
-## Estructura y responsabilidades
+## Structure and responsibilities
 
-| Ruta | Responsabilidad |
+| Path | Responsibility |
 | --- | --- |
-| `Contactinet.Web/Contactinet.Web/` | Aplicación Razor Pages y arranque ASP.NET Core. |
-| `Contactinet.Web/Contactinet.Web/Data/` | ApplicationDbContext y migraciones del esquema Identity. |
-| `Contactinet.Web/Contactinet.Web/Pages/` | Inicio, privacidad, errores y layouts de la plantilla. |
-| `Contactinet.Web/Contactinet.Web/Properties/PublishProfiles/` | Perfiles de despliegue y archivos locales del usuario. |
-| `azure-pipelines.yml` | Definición de pipeline existente. |
+| `Contactinet.Web/Contactinet.Web/` | Razor Pages application and ASP.NET Core startup. |
+| `Contactinet.Web/Contactinet.Web/Data/` | ApplicationDbContext and Identity schema migrations. |
+| `Contactinet.Web/Contactinet.Web/Pages/` | Template home, privacy, error pages, and layouts. |
+| `Contactinet.Web/Contactinet.Web/Properties/PublishProfiles/` | Deployment profiles and local user files. |
+| `azure-pipelines.yml` | Existing pipeline definition. |
 
-## Tecnologías y requisitos
+## Technologies and requirements
 
-.NET Core 3.0, Entity Framework Core 3, SQL Server/LocalDB y herramientas compatibles con ASP.NET Core Identity.
+.NET Core 3.0, Entity Framework Core 3, SQL Server/LocalDB, and tools compatible with ASP.NET Core Identity.
 
-Destinos leídos de los proyectos: `netcoreapp3.0`.
+Targets read from project files: `netcoreapp3.0`.
 
-## Preparación y arranque
+## Setup and startup
 
-Preparar DefaultConnection y revisar Startup antes de iniciar el proyecto web. Las migraciones crean tablas de Identity y solo deben aplicarse a una base elegida de forma explícita.
+Prepare DefaultConnection and review Startup before starting the web project. Migrations create Identity tables and should only be applied to an explicitly selected database.
 
-Comandos de preparación, desde esta carpeta, después de revisar la configuración privada:
+Setup commands, run from this folder after reviewing private configuration:
 
 ```text
 dotnet restore Contactinet.Web/Contactinet.Web.sln
 dotnet build Contactinet.Web/Contactinet.Web/Contactinet.Web.csproj
 ```
 
-Soluciones presentes: `Contactinet.Web/Contactinet.Web.sln`.
+Solutions present: `Contactinet.Web/Contactinet.Web.sln`.
 
-## Configuración e integraciones
+## Configuration and integrations
 
-appsettings.json declara DefaultConnection y AppSettings:dbConnection. Los perfiles .pubxml.user son privados y pueden contener contraseñas de publicación cifradas.
+appsettings.json declares DefaultConnection and AppSettings:dbConnection. .pubxml.user profiles are private and may contain encrypted publish passwords.
 
-## Estado de esta copia
+## Status of this copy
 
-La copia visible conserva principalmente el esqueleto de Razor Pages/Identity; no demuestra una red de contactos funcional completa. No se ejecutaron migraciones ni pipelines.
+The visible copy mainly preserves a Razor Pages/Identity scaffold; it does not demonstrate a complete working contact network. Migrations and pipelines were not run.
 
-La revisión fue estática: no se restauraron dependencias, no se compiló ni se ejecutaron aplicaciones o pruebas. Los comandos anteriores son instrucciones de preparación, no resultados de validación. Las versiones indicadas son las del código conservado.
+The review was static: dependencies were not restored, and applications and tests were neither built nor run. The commands above are setup instructions, not validation results. Listed versions describe the preserved code.
 
 
-## Copia pública
+## Public copy
 
-Las credenciales originales se han retirado o sustituido por `REPLACE_WITH_YOUR_VALUE`. Los datos locales, sesiones, certificados privados y perfiles de despliegue se omiten. Configurar servicios y credenciales propios antes de ejecutar. La compilación y el funcionamiento con servicios externos no se han validado.
+Original credentials have been removed or replaced with `REPLACE_WITH_YOUR_VALUE`. Local data, sessions, private certificates, and deployment profiles are omitted. Configure your own services and credentials before running. Building and operation with external services have not been validated.
